@@ -15,5 +15,12 @@ module.exports = function (app) {
             if(error) throw error;
             res.send(JSON.parse(response.body));
         })
+    }),
+
+    app.get("/api/champions/", function (req, res) {
+        request(`http://ddragon.leagueoflegends.com/cdn/9.3.1/data/en_US/champion.json`, function(error, response){
+            if(error) throw error;
+            res.send(JSON.parse(response.body));
+        })
     })
 };
