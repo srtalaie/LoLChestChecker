@@ -1,0 +1,27 @@
+{
+  "name": "lolchestchecker",
+  "version": "1.0.0",
+  "description": "Web tool to see which champs you have acquired a chest for during the current season.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srtalaie/LoLChestChecker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srtalaie/LoLChestChecker/issues"
+  },
+  "homepage": "https://github.com/srtalaie/LoLChestChecker#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  }
+}
