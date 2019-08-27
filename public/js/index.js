@@ -18,16 +18,37 @@ $('.search-btn').on('click', function(){
     })
 });
 
+//Keep to get champ masteries
+// $('.display-btn').on('click', function(){
+//     $.ajax({
+//         url: `/api/mastery/${summonerId}`,
+//         method: 'GET',
+//            statusCode: {
+//             404: function() {
+//                 $('.champion-output').html('<h1>Invalid Summoner Name Was Submitted</h1>');
+//             }
+//         }
+//     }).then(function(response){
+//         $('.champion-output').empty();
+//         console.log(response);
+//     })
+// });
+
+//Display champs
 $('.display-btn').on('click', function(){
     $.ajax({
-        url: `/api/mastery/${summonerId}`,
-        method: 'GET',statusCode: {
+        url: `/api/champions`,
+        method: 'GET',
+        statusCode: {
             404: function() {
                 $('.champion-output').html('<h1>Invalid Summoner Name Was Submitted</h1>');
             }
         }
     }).then(function(response){
         $('.champion-output').empty();
-        console.log(response);
+        console.log(response.data.Aatrox.name);
+        $('.champion-output').html(`${console.log('Worked')}
+            <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${response.data.Aatrox.name}_0.jpg" alt="${response.data.Aatrox.name}">
+        `);
     })
 });
