@@ -4,6 +4,8 @@ $(document).ready(function(){
     let summonerId = '';
     let champs = [];
     let displayChamps = [];
+    let noChestChamps = [];
+    let noChestChampsDisplay = [];
     
     //Get champs
     $.ajax({
@@ -59,7 +61,14 @@ $(document).ready(function(){
                 }
             });
 
-            //Check what champs user has gotten chests with
+            noChestChamps = champMasteries.filter(function(champion){
+                if(!champion.chestGranted){
+                    return champion;
+                }
+            });
+
+            console.log(noChestChamps)
+            //Check what champs user has gotten chests with and which ones they haven't and place in apporpriate    arrays
             Object.entries(champs).forEach(function(champ){
                 for(let i = 0; i < chestChamps.length; i++){
                     if(chestChamps[i].championId === parseInt(champ[1].key)){
@@ -67,10 +76,25 @@ $(document).ready(function(){
                     }
                 }
             });
+            Object.entries(champs).forEach(function(champ){
+                for(let i = 0; i < chestChamps.length; i++){
+                    if(noChestChamps[i].championId === parseInt(champ[1].key)){
+                        noChestChampsDisplay.push(champ);
+                    }
+                }
+            });
 
-            //Display champs with chests
+            //Display champs with chests and without
             displayChamps.forEach(function(champ){
                 $('.champion-output').append(`
+                    <div>
+                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ[0]}_0.jpg" alt="${champ[0]} height="200" width="200">
+                        <p>${champ[0]}</p>
+                    </div>
+                `)
+            });
+            noChestChampsDisplay.forEach(function(champ){
+                $('.no-chest-champs').append(`
                     <div>
                         <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ[0]}_0.jpg" alt="${champ[0]} height="200" width="200">
                         <p>${champ[0]}</p>
