@@ -35,7 +35,7 @@ $(document).ready(function(){
             }
         }).then(function(response){
             summonerId = response.id;
-            $('.summoner-output').html(`<h1>${response.name}</h1>`);
+            $('.summoner-output').html(`<h1>${response.name}</h1><h3>Summoner Level: ${response.summonerLevel}</h3>`);
             return summonerId;
         })
         return summonerId;

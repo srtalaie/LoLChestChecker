@@ -1,7 +1,9 @@
 body {
     background-image: url('/images/bg.png');
     background-repeat: no-repeat;
-    background-size: cover;
+	background-size: cover;
+	font-family: 'Rubik', sans-serif;
+	color: white;
 }
 
 .container {
