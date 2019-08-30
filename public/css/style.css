@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.input-area, .buttons {
+    margin: 20px;
+}
+
+button {
+    margin: 10px;
+    border-radius: 25%;
+}
+
+.champs-area {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+}
+
+.champs-with-chests-area {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.champs-without-chests-area {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.champ-with-chest {
+    margin: 15px;
+    text-align: center;
+}
+
+.champ-without-chest {
+    margin: 15px;
+    text-align: center;
+}
+
+.champ-with-chest img {
+    border: 2px solid darkgoldenrod;
+}

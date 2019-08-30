@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LoL Chest Checker</title>
+    <link rel="stylesheet" type="text/css" href="/css/style">
 </head>
 <body>
-    <input class="input-bar"></input>
-    <button class="search-btn">Search</button>
-    <div class="summoner-output"></div>
-    <button class="display-btn">Display Champs</button>
-    <div class="champion-output"></div>
-    <div class="no-chest-champs"></div>
+    <div class="container">
+        <div class="input-area">
+            <input class="input-bar"></input>
+        </div>
+
+        <div class="summoner-output"></div>
+
+        <div class="buttons">
+            <button class="search-btn">Search</button>
+            <button class="display-btn">Display Champs</button>
+        </div>
+    </div>
+
+    <div class="champs-area">
+        <div class="champs-with-chests-area"></div>
+
+        <div class="champs-without-chests-area"></div>
+    </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/index.js"></script>

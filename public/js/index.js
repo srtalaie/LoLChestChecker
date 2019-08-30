@@ -67,7 +67,6 @@ $(document).ready(function(){
                 }
             });
 
-            console.log(noChestChamps)
             //Check what champs user has gotten chests with and which ones they haven't and place in apporpriate    arrays
             Object.entries(champs).forEach(function(champ){
                 for(let i = 0; i < chestChamps.length; i++){
@@ -77,7 +76,7 @@ $(document).ready(function(){
                 }
             });
             Object.entries(champs).forEach(function(champ){
-                for(let i = 0; i < chestChamps.length; i++){
+                for(let i = 0; i < noChestChamps.length; i++){
                     if(noChestChamps[i].championId === parseInt(champ[1].key)){
                         noChestChampsDisplay.push(champ);
                     }
@@ -86,17 +85,17 @@ $(document).ready(function(){
 
             //Display champs with chests and without
             displayChamps.forEach(function(champ){
-                $('.champion-output').append(`
-                    <div>
-                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ[0]}_0.jpg" alt="${champ[0]} height="200" width="200">
+                $('.champs-with-chests-area').append(`
+                    <div class="champ-with-chest">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ[0]}_0.jpg" alt="${champ[0]} height="100" width="100">
                         <p>${champ[0]}</p>
                     </div>
                 `)
             });
             noChestChampsDisplay.forEach(function(champ){
-                $('.no-chest-champs').append(`
-                    <div>
-                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ[0]}_0.jpg" alt="${champ[0]} height="200" width="200">
+                $('.champs-without-chests-area').append(`
+                    <div class="champ-without-chest">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ[0]}_0.jpg" alt="${champ[0]} height="100" width="100">
                         <p>${champ[0]}</p>
                     </div>
                 `)
