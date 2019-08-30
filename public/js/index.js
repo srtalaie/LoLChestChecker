@@ -24,8 +24,7 @@ $(document).ready(function(){
     $('.search-btn').on('click', function(){
         //Get summoner name from user input
         let summonerName = $('.input-bar').val();
-        $('.input-bar').empty();
-    
+
         $.ajax({
             url: `/api/summoner/${summonerName}`,
             method: 'GET',
@@ -39,11 +38,11 @@ $(document).ready(function(){
             $('.summoner-output').html(`<h1>${response.name}</h1>`);
             return summonerId;
         })
+        return summonerId;
     });
     
     //Get Champ Masteries and Cross check with champs
-    $('.display-btn').on('click', function(){
-        $('.champion-output').empty();    
+    $('.display-btn').on('click', function(){ 
         $.ajax({
             url: `/api/mastery/${summonerId}`,
             method: 'GET',
@@ -100,6 +99,20 @@ $(document).ready(function(){
                     </div>
                 `)
             });
+
+            $('.chest-amount').html(`<p>Chests this season: ${displayChamps.length}</p>`)
         })
+    });
+
+    //Clear data for a new search
+    $('.clear').on('click', function(){
+        displayChamps = [];
+        noChestChampsDisplay = [];
+
+        $('.champs-with-chests-area').empty();
+        $('.champs-without-chests-area').empty();
+        $('.summoner-output').empty();
+        $('.input-bar').val('');
+        $('.chest-amount').empty();
     });
 });
