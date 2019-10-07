@@ -103,3 +103,7 @@ button:active {
 .champ-with-chest img {
     border: 2px solid darkgoldenrod;
 }
+
+.title {
+	text-align: center;
+}
