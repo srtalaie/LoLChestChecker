@@ -1,6 +1,5 @@
 body {
-    background-image: url('/images/bg.png');
-    background-repeat: no-repeat;
+	background-color: black;
 	background-size: cover;
 	font-family: 'Rubik', sans-serif;
 	color: white;
